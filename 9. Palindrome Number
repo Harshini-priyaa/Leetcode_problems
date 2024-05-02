@@ -1,0 +1,15 @@
+uint rev(int x){
+    uint num = 0, rem = 0; 
+    while(x){
+        rem= x % 10;
+        num = (num * 10) + rem;
+        x /= 10;
+    }
+    return num;
+}
+
+bool isPalindrome(int x) {
+    if(x < 0) return 0;
+    if(x == rev(x)) return 1;
+    else return 0;
+}
