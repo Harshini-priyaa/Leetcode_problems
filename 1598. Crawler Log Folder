@@ -1,0 +1,13 @@
+int minOperations(char** logs, int logsSize) {
+    int steps = 0;
+    for(int i = 0; i < logsSize; i += 1){
+        if(strcmp(logs[i], "./") == 0){
+            steps = steps;
+        }
+        else if(strcmp(logs[i],"../") == 0) {
+            if(steps > 0) steps -= 1;
+        }
+        else steps += 1;
+    }
+    return steps;
+}
